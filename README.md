@@ -294,7 +294,7 @@ python -m examples.D.generate
 
 # License
 
-The implementation here is provided solely as part of the research publication "[Exploiting the Signal-Leak Bias in Diffusion Models](https://ivrl.github.io/signal-leak-bias/)", only for academic non-commercial usage. Details can be found in the [``LICENSE'' file](https://github.com/ivrl/signal-leak-bias/blob/main/LICENSE). If the License is not suitable for your business or project, please contact Largo.ai (`info@largo.ai`) and EPFL-TTO (`info.tto@epfl.ch`) for a full commercial license.
+The implementation here is provided solely as part of the research publication "[Exploiting the Signal-Leak Bias in Diffusion Models](https://ivrl.github.io/signal-leak-bias/)", only for academic non-commercial usage. Details can be found in the [LICENSE file](https://github.com/ivrl/signal-leak-bias/blob/main/LICENSE). If the License is not suitable for your business or project, please contact Largo.ai (info@largo.ai) and EPFL-TTO (info.tto@epfl.ch) for a full commercial license.
 
 # Citation
 Please cite the paper as follows:
