@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="Exploiting the Signal-Leak Bias in Diffusion Models">
+  <meta property="og:title" content="Exploiting the Signal-Leak Bias in Diffusion Models" />
+  <meta property="og:description" content="Exploiting the Signal-Leak Bias in Diffusion Models" />
+  <meta property="og:url" content="https://ivrl.github.io/signal-leak-bias/" />
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/banner.png" />
+  <meta property="og:image:width" content="1105" />
+  <meta property="og:image:height" content="622" />
+
+
+  <meta name="twitter:title" content="Exploiting the Signal-Leak Bias in Diffusion Models">
+  <meta name="twitter:description" content="Exploiting the Signal-Leak Bias in Diffusion Models">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/banner.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="Diffusion models, Signal leakage, Color, Brightness">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Exploiting the Signal-Leak Bias in Diffusion Models</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+
+  <meta name="google-site-verification" content="ohByZQJx9EYQ7Po92WxVz1fvVDkQqgI6U5wQZ_7mKBY" />
+</head>
+
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Exploiting the Signal-Leak Bias in Diffusion Models</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://martin-ev.github.io/" target="_blank">Martin Nicolas
+                  Everaert</a> <sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/athanasiosfitsios/" target="_blank">Athanasios Fitsios</a> <sup>1,
+                  2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=KDiTxBQAAAAJ" target="_blank">Marco Bocchio</a>
+                <sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=84FopNgAAAAJ" target="_blank">Sami Arpa</a>
+                <sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=EX3OYP4AAAAJ" target="_blank">Sabine Süsstrunk</a>
+                <sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=lc2HaZwAAAAJ" target="_blank">Radhakrishna
+                  Achanta</a> <sup>1</sup>
+              </span>
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <sup>1</sup> EPFL, Switzerland, <br><sup>2</sup> Largo.ai, Lausanne, Switzerland
+              </span>
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">WACV 2024</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2309.15842.pdf" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+
+                <!-- PDF link Supplementary -->
+                <span class="link-block">
+                  <a href="https://openaccess.thecvf.com/content/WACV2024/supplemental/Everaert_Exploiting_the_Signal-Leak_WACV_2024_supplemental.pdf"
+                    target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Supplementary document</span>
+                  </a>
+                </span>
+
+                <!-- Github link  -->
+                <span class="link-block">
+                  <a href="https://github.com/IVRL/signal-leak-bias" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- arXiv link  -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2309.15842" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+
+                <!-- CVF link  -->
+                <span class="link-block">
+                  <a href="https://openaccess.thecvf.com/content/WACV2024/html/Everaert_Exploiting_the_Signal-Leak_Bias_in_Diffusion_Models_WACV_2024_paper.html"
+                    target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-external-link-alt"></i>
+                    </span>
+                    <span>CVF</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Paper abstract -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              There is a bias in the inference pipeline of most diffusion models. This bias arises from a signal leak
+              whose distribution deviates from the noise distribution, creating a discrepancy between training and
+              inference processes. We demonstrate that this signal-leak bias is particularly significant when models are
+              tuned to a specific style, causing sub-optimal style matching. Recent research tries to avoid the signal
+              leakage during training. We instead show how we can exploit this signal-leak bias in existing diffusion
+              models to allow more control over the generated images. This enables us to generate images with more
+              varied brightness, and images that better match a desired style or color. By modeling the distribution of
+              the signal leak in the spatial frequency and pixel domains, and including a signal leak in the initial
+              latent, we generate images that better match expected results without any additional training.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End paper abstract -->
+
+  <!-- Youtube video -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <!-- Paper video. -->
+        <div class="columns is-centered has-text-centered">
+          <h2 class="title is-3">Video Presentation</h2>
+        </div>
+        <div class="columns is-centered has-text-centered">
+          <div class="publication-video">
+            <!-- Youtube embed code here -->
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/j2dZdm3fy-8?si=4e9744DNpzfZAA8M"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End youtube video -->
+
+  <!-- Poster -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered has-text-centered">
+          <h2 class="title is-3">Poster</h2>
+        </div>
+        <iframe src="static/wacv24-51.pdf" width="100%" height="600" frameborder="0">
+        </iframe>
+      </div>
+    </div>
+  </section>
+  <!-- End Postero -->
+
+
+  <!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container content">
+      <div class="columns is-centered has-text-centered">
+        <h2 class="title is-3">Citation</h2>
+      </div>
+      <div class="container is-max-desktop">
+        <pre>
+        <code>
+@InProceedings{Everaert_2024_WACV,
+    author   = {Everaert, Martin Nicolas and Fitsios, Athanasios and Bocchio, Marco and Arpa, Sami and Süsstrunk, Sabine and Achanta, Radhakrishna},
+    title    = {{E}xploiting the {S}ignal-{L}eak {B}ias in {D}iffusion {M}odels}, 
+    booktitle = {Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
+    month     = {January},
+    year      = {2024},
+    pages     = {4025-4034}
+}
+        </code>
+      </pre>
+      </div>
+    </div>
+  </section>
+  <!--End BibTex citation -->
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                target="_blank">Academic Project Page Template</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
