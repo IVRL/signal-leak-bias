@@ -115,17 +115,6 @@
                   </a>
                 </span>
 
-                <!-- Github link  -->
-                <span class="link-block">
-                  <a href="https://github.com/IVRL/signal-leak-bias" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-
                 <!-- arXiv link  -->
                 <span class="link-block">
                   <a href="https://arxiv.org/abs/2309.15842" target="_blank"
@@ -147,6 +136,24 @@
                     <span>CVF</span>
                   </a>
                 </span>
+              </div>
+            </div>
+
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- Github link  -->
+                <span class="link-block">
+                  <a href="https://github.com/IVRL/signal-leak-bias" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code <small><small>(Academic non-commercial license)</small></small> </span>
+                    
+                  </a>
+                </span>
+
               </div>
             </div>
           </div>
@@ -202,6 +209,380 @@
   </section>
   <!-- End youtube video -->
 
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered has-text-centered">
+          <h2 class="title is-3">🔎 Research Highlights</h2>
+        </div>
+
+        <div class="content has-text-justified">
+          <ul>
+            <li>In the training of most diffusion models, data are never completely noised, creating a signal
+              leakage and leading to discrepancies between training and inference processes.</li>
+            <li>As a consequence of this signal leakage, the low-frequency / large-scale content of the generated
+              images is mostly unchanged from the initial latents we start the generation process from, generating
+              greyish images or images that do not match the desired style.</li>
+            <li>Our research proposed to exploit this signal-leak bias at inference time to gain more control over
+              generated images.</li>
+            <li>We model the distribution of the signal leak present during training, to include a signal leak at
+              inference time in the initial latents.</li>
+            <li>✨✨ No training required! ✨✨</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered has-text-centered">
+          <h2 class="title is-3">Improving style-tuned models</h2>
+        </div>
+        <div class="content has-text-justified">
+          <p>Models tuned on specific styles often produce results that do not match the styles well. We argue that this is because of a discrepancy between training (contains a
+            signal leak whose distribution differs from unit/standard multivariate Gaussian) and inference (no signal
+            leak). We fix this discrepancy by modelling the signal leak present during training and including a signal
+            leak  at inference time too.</p>
+
+          <p><strong>Model:</strong> <a
+              href="https://huggingface.co/sd-dreambooth-library/nasa-space-v2-768">sd-dreambooth-library/nasa-space-v2-768</a>,
+            with guidance_scale = 1</p>
+          <p><strong>Prompt:</strong> &quot;A very dark picture of the sky, Nasa style&quot;</p>
+          <table >
+            <thead>
+              <tr>
+                <th style="text-align:center">Initial latents</th>
+                <th style="text-align:center">Generated image (original)</th>
+                <th style="text-align:center">+ Signal Leak</th>
+                <th style="text-align:center">Generated image (ours)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/A1/imgs/latents0.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/A1/imgs/original0.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/A1/imgs/signal_leak0.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/A1/imgs/ours0.png" width="200" /></td>
+              </tr>
+              <tr>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/A1/imgs/latents1.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/A1/imgs/original1.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/A1/imgs/signal_leak1.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/A1/imgs/ours1.png" width="200" /></td>
+              </tr>
+              <tr>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/A1/imgs/latents2.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/A1/imgs/original2.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/A1/imgs/signal_leak2.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/A1/imgs/ours2.png" width="200" /></td>
+              </tr>
+              <tr>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/A1/imgs/latents3.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/A1/imgs/original3.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/A1/imgs/signal_leak3.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/A1/imgs/ours3.png" width="200" /></td>
+              </tr>
+              <tr>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/A1/imgs/latents4.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/A1/imgs/original4.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/A1/imgs/signal_leak4.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/A1/imgs/ours4.png" width="200" /></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p><strong>Model:</strong> <a
+              href="https://huggingface.co/CompVis/stable-diffusion-v1-4">CompVis/stable-diffusion-v1-4</a> + <a
+              href="https://huggingface.co/sd-concepts-library/line-art">sd-concepts-library/line-art</a></p>
+          <p><strong>Prompt:</strong> &quot;An astronaut riding a horse in the style of
+            <code>&lt;line-art&gt;</code>&quot;</p>
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align:center">Initial latents</th>
+                <th style="text-align:center">Generated image (original)</th>
+                <th style="text-align:center">+ Signal Leak</th>
+                <th style="text-align:center">Generated image (ours)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/A2/imgs/latents0.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/A2/imgs/original0.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/A2/imgs/signal_leak0.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/A2/imgs/ours0.png" width="200" /></td>
+              </tr>
+              <tr>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/A2/imgs/latents1.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/A2/imgs/original1.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/A2/imgs/signal_leak1.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/A2/imgs/ours1.png" width="200" /></td>
+              </tr>
+              <tr>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/A2/imgs/latents2.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/A2/imgs/original2.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/A2/imgs/signal_leak2.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/A2/imgs/ours2.png" width="200" /></td>
+              </tr>
+              <tr>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/A2/imgs/latents3.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/A2/imgs/original3.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/A2/imgs/signal_leak3.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/A2/imgs/ours3.png" width="200" /></td>
+              </tr>
+              <tr>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/A2/imgs/latents4.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/A2/imgs/original4.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/A2/imgs/signal_leak4.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/A2/imgs/ours4.png" width="200" /></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered has-text-centered">
+          <h2 class="title is-3">Training-free style adaptation of Stable Diffusion</h2>
+        </div>
+        <div class="content has-text-justified">
+          <p>The same approach as the previous example can be used directly in the base diffusion model, instead of the
+            model finetuned on a style. That is, we include a signal leak at inference time to bias the image generation
+            towards the desired style.</p>
+          <p>Without our approach, the prompt alone is not sufficient enough to generate picture of the desired style. 
+            Complementing it with a signal leak of the style generates images that better match the desired output.</p>
+
+          <p><strong>Model:</strong> <a
+              href="https://huggingface.co/stabilityai/stable-diffusion-2-1">stabilityai/stable-diffusion-2-1</a>, with
+            guidance_scale = 1</p>
+          <p><strong>Prompt:</strong> &quot;A very dark picture of the sky, taken by the Nasa.&quot;</p>
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align:center">Initial latents</th>
+                <th style="text-align:center">Generated image (original)</th>
+                <th style="text-align:center">+ Signal Leak</th>
+                <th style="text-align:center">Generated image (ours)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/B1/imgs/latents0.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/B1/imgs/original0.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/B1/imgs/signal_leak0.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/B1/imgs/ours0.png" width="200" /></td>
+              </tr>
+              <tr>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/B1/imgs/latents1.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/B1/imgs/original1.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/B1/imgs/signal_leak1.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/B1/imgs/ours1.png" width="200" /></td>
+              </tr>
+              <tr>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/B1/imgs/latents2.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/B1/imgs/original2.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/B1/imgs/signal_leak2.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/B1/imgs/ours2.png" width="200" /></td>
+              </tr>
+              <tr>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/B1/imgs/latents3.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/B1/imgs/original3.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/B1/imgs/signal_leak3.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/B1/imgs/ours3.png" width="200" /></td>
+              </tr>
+              <tr>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/B1/imgs/latents4.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/B1/imgs/original4.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/B1/imgs/signal_leak4.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/B1/imgs/ours4.png" width="200" /></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p><strong>Model:</strong> <a
+              href="https://huggingface.co/CompVis/stable-diffusion-v1-4">CompVis/stable-diffusion-v1-4</a></p>
+          <p><strong>Prompt:</strong> &quot;An astronaut riding a horse, in the style of line art, pastel colors.&quot;
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align:center">Initial latents</th>
+                <th style="text-align:center">Generated image (original)</th>
+                <th style="text-align:center">+ Signal Leak</th>
+                <th style="text-align:center">Generated image (ours)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/B2/imgs/latents0.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/B2/imgs/original0.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/B2/imgs/signal_leak0.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/B2/imgs/ours0.png" width="200" /></td>
+              </tr>
+              <tr>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/B2/imgs/latents1.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/B2/imgs/original1.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/B2/imgs/signal_leak1.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/B2/imgs/ours1.png" width="200" /></td>
+              </tr>
+              <tr>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/B2/imgs/latents2.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/B2/imgs/original2.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/B2/imgs/signal_leak2.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/B2/imgs/ours2.png" width="200" /></td>
+              </tr>
+              <tr>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/B2/imgs/latents3.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/B2/imgs/original3.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/B2/imgs/signal_leak3.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/B2/imgs/ours3.png" width="200" /></td>
+              </tr>
+              <tr>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/B2/imgs/latents4.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/B2/imgs/original4.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/B2/imgs/signal_leak4.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/B2/imgs/ours4.png" width="200" /></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered has-text-centered">
+          <h2 class="title is-3">More diverse generated images</h2>
+        </div>
+        <div class="content has-text-justified">
+          <p>For <em>natural</em> images, the disrepency between training and inference distributiosn mostly lies in
+            the frequency components: noised images during training still retain the low-frequency contents (large-scale
+            patterns, main colors) of the original images, while the initial latents during inference always have medium
+            low-frequency contents (e.g. <em>greyish</em> average color). Our approach generates less greyish images.</p>
+
+          <p><strong>Model:</strong> <a
+              href="https://huggingface.co/stabilityai/stable-diffusion-2-1">stabilityai/stable-diffusion-2-1</a></p>
+          <p><strong>Prompt:</strong> &quot;An astronaut riding a horse&quot;</p>
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align:center">Initial latents</th>
+                <th style="text-align:center">Generated image (original)</th>
+                <th style="text-align:center">+ Signal Leak</th>
+                <th style="text-align:center">Generated image (ours)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/C/imgs/latents0.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/C/imgs/original0.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/C/imgs/signal_leak0.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/C/imgs/ours0.png" width="200" /></td>
+              </tr>
+              <tr>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/C/imgs/latents1.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/C/imgs/original1.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/C/imgs/signal_leak1.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/C/imgs/ours1.png" width="200" /></td>
+              </tr>
+              <tr>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/C/imgs/latents2.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/C/imgs/original2.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/C/imgs/signal_leak2.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/C/imgs/ours2.png" width="200" /></td>
+              </tr>
+              <tr>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/C/imgs/latents3.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/C/imgs/original3.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/C/imgs/signal_leak3.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/C/imgs/ours3.png" width="200" /></td>
+              </tr>
+              <tr>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/C/imgs/latents4.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/C/imgs/original4.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/C/imgs/signal_leak4.png" width="200" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/C/imgs/ours4.png" width="200" /></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered has-text-centered">
+          <h2 class="title is-3">Control on the average color</h2>
+        </div>
+        <div class="content has-text-justified">
+          <p>It is also possible to <em>manually</em> set the low-frequency components 
+            of the signal leak, providing control on the low-frequency content of the generated image. </p>
+
+          <p><strong>Model:</strong> <a
+              href="https://huggingface.co/stabilityai/stable-diffusion-2-1">stabilityai/stable-diffusion-2-1</a></p>
+          <p><strong>Prompt:</strong> &quot;An astronaut riding a horse&quot;</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Channel</th>
+                <th>-2</th>
+                <th>-1</th>
+                <th>0</th>
+                <th>1</th>
+                <th>2</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>0</td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/D/imgs/0_-2.png" width="150" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/D/imgs/0_-1.png" width="150" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/D/imgs/0_0.png" width="150" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/D/imgs/0_1.png" width="150" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/D/imgs/0_2.png" width="150" /></td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/D/imgs/1_-2.png" width="150" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/D/imgs/1_-1.png" width="150" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/D/imgs/1_0.png" width="150" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/D/imgs/1_1.png" width="150" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/D/imgs/1_2.png" width="150" /></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/D/imgs/2_-2.png" width="150" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/D/imgs/2_-1.png" width="150" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/D/imgs/2_0.png" width="150" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/D/imgs/2_1.png" width="150" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/D/imgs/2_2.png" width="150" /></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/D/imgs/3_-2.png" width="150" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/D/imgs/3_-1.png" width="150" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/D/imgs/3_0.png" width="150" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/D/imgs/3_1.png" width="150" /></td>
+                <td><img src="https://raw.githubusercontent.com/IVRL/signal-leak-bias/main/src/examples/D/imgs/3_2.png" width="150" /></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Poster -->
   <section class="hero is-small">
     <div class="hero-body">
@@ -214,8 +595,25 @@
       </div>
     </div>
   </section>
-  <!-- End Postero -->
+  <!-- End Poster -->
 
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered has-text-centered">
+          <h2 class="title is-3">License</h2>
+        </div>
+        <div class="content has-text-justified">
+          <p>The <a href="https://ivrl.github.io/signal-leak-bias/">implementation</a> is provided solely as part of the research publication &quot;<a
+              href="https://ivrl.github.io/signal-leak-bias/">Exploiting the Signal-Leak Bias in Diffusion
+              Models</a>&quot;, only for academic non-commercial usage. Details can be found in the <a
+              href="https://github.com/ivrl/signal-leak-bias/blob/main/LICENSE">LICENSE file</a>. If the License is not
+            suitable for your business or project, please contact Largo.ai (info@largo.ai) and EPFL-TTO
+            (info.tto@epfl.ch) for a full commercial license.</p>
+
+        </div>
+      </div>
+  </section>
 
   <!--BibTex citation -->
   <section class="section" id="BibTeX">
@@ -224,8 +622,7 @@
         <h2 class="title is-3">Citation</h2>
       </div>
       <div class="container is-max-desktop">
-        <pre>
-        <code>
+        <pre><code>
 @InProceedings{Everaert_2024_WACV,
     author   = {Everaert, Martin Nicolas and Fitsios, Athanasios and Bocchio, Marco and Arpa, Sami and Süsstrunk, Sabine and Achanta, Radhakrishna},
     title    = {{E}xploiting the {S}ignal-{L}eak {B}ias in {D}iffusion {M}odels}, 
@@ -233,9 +630,7 @@
     month     = {January},
     year      = {2024},
     pages     = {4025-4034}
-}
-        </code>
-      </pre>
+}</code></pre>
       </div>
     </div>
   </section>
