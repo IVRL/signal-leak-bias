@@ -3,6 +3,7 @@
 [![arXiv](https://img.shields.io/badge/arXiv-2309.15842-red)](https://arxiv.org/abs/2309.15842)
 [![Project Page](https://img.shields.io/badge/Project%20Page-IVRL-blue)](https://ivrl.github.io/signal-leak-bias/)
 [![Proceedings](https://img.shields.io/badge/WACV%20Proceedings-CVF-blue)](https://openaccess.thecvf.com/content/WACV2024/html/Everaert_Exploiting_the_Signal-Leak_Bias_in_Diffusion_Models_WACV_2024_paper.html)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/IVRL/signal-leak-bias/)
 
 
 ## Overview
@@ -26,6 +27,10 @@ This repository contains the official implementation for our paper titled "[Expl
 
 
 ## Getting Started
+
+If you're unsure where to execute the following commands, you will likely find it more convenient to open this README in Google Colab. Simply click the following badge to launch a Colab environment: 
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/IVRL/signal-leak-bias/)
 
 ### Code and development environment
 
