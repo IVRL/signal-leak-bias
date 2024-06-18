@@ -5,6 +5,8 @@
 [![Proceedings](https://img.shields.io/badge/WACV%20Proceedings-CVF-blue)](https://openaccess.thecvf.com/content/WACV2024/html/Everaert_Exploiting_the_Signal-Leak_Bias_in_Diffusion_Models_WACV_2024_paper.html)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/IVRL/signal-leak-bias/blob/main/colab.ipynb)
 
+[![5-min demo](https://img.shields.io/badge/AI%20Tinkerers%20Demo-Colab-blue)](https://colab.research.google.com/github/IVRL/signal-leak-bias/blob/main/5min-demo.ipynb)
+
 
 ## Overview
 
