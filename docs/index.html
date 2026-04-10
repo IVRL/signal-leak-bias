@@ -1,47 +1,167 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
-  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
-  <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="Exploiting the Signal-Leak Bias in Diffusion Models">
-  <meta property="og:title" content="Exploiting the Signal-Leak Bias in Diffusion Models" />
-  <meta property="og:description" content="Exploiting the Signal-Leak Bias in Diffusion Models" />
-  <meta property="og:url" content="https://ivrl.github.io/signal-leak-bias/" />
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
-  <meta property="og:image" content="static/image/banner.png" />
-  <meta property="og:image:width" content="1105" />
-  <meta property="og:image:height" content="622" />
-
-
-  <meta name="twitter:title" content="Exploiting the Signal-Leak Bias in Diffusion Models">
-  <meta name="twitter:description" content="Exploiting the Signal-Leak Bias in Diffusion Models">
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
-  <meta name="twitter:image" content="static/images/banner.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <!-- Keywords for your paper to be indexed by-->
-  <meta name="keywords" content="Diffusion models, Signal leakage, Color, Brightness">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Exploiting the Signal-Leak Bias in Diffusion Models - Everaert et al. - WACV 2024">
+  <meta name="description" content="Examines and leverages the signal-leak bias in diffusion models for improved image generation.">
+  <meta name="keywords" content="Diffusion models, Signal leakage, Color, Brightness, Style adaptation, WACV 2024, machine learning, computer vision, AI">
+  <meta name="author" content="Martin Nicolas Everaert, Athanasios Fitsios, Marco Bocchio, Sami Arpa, Sabine Süsstrunk, Radhakrishna Achanta">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="IVRL - EPFL">
+  <meta property="og:title" content="Exploiting the Signal-Leak Bias in Diffusion Models - Everaert et al. - WACV 2024">
+  <meta property="og:description" content="Examines and leverages the signal-leak bias in diffusion models for improved image generation.">
+  <meta property="og:url" content="https://ivrl.github.io/signal-leak-bias/">
+  <meta property="og:image" content="https://ivrl.github.io/signal-leak-bias/static/images/banner.jpg">
+  <meta property="og:image:width" content="1105">
+  <meta property="og:image:height" content="622">
+  <meta property="og:image:alt" content="Exploiting the Signal-Leak Bias in Diffusion Models">
+  <meta property="article:published_time" content="2024-01-04T00:00:00.000Z">
+  <meta property="article:author" content="Martin Nicolas Everaert">
+  <meta property="article:section" content="Research">
+  <meta property="article:tag" content="Diffusion models">
+  <meta property="article:tag" content="Signal leakage">
+  <meta property="article:tag" content="Color">
+  <meta property="article:tag" content="Brightness">
+  <meta property="article:tag" content="Style adaptation">
+  <meta property="article:tag" content="WACV 2024">
+  <meta property="article:tag" content="machine learning">
+  <meta property="article:tag" content="computer vision">
+  <meta property="article:tag" content="AI">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@EveraertMartin">
+  <meta name="twitter:title" content="Exploiting the Signal-Leak Bias in Diffusion Models - Everaert et al. - WACV 2024">
+  <meta name="twitter:description" content="Examines and leverages the signal-leak bias in diffusion models for improved image generation.">
+  <meta name="twitter:image" content="https://ivrl.github.io/signal-leak-bias/static/images/banner.jpg">
+  <meta name="twitter:image:alt" content="Exploiting the Signal-Leak Bias in Diffusion Models">
+
+  <!-- Academic/Research Specific -->
+  <meta name="citation_title" content="Exploiting the Signal-Leak Bias in Diffusion Models">
+  <meta name="citation_author" content="Everaert, Martin Nicolas">
+  <meta name="citation_author" content="Fitsios, Athanasios">
+  <meta name="citation_author" content="Bocchio, Marco">
+  <meta name="citation_author" content="Arpa, Sami">
+  <meta name="citation_author" content="Süsstrunk, Sabine">
+  <meta name="citation_author" content="Achanta, Radhakrishna">
+  <meta name="citation_publication_date" content="2024">
+  <meta name="citation_conference_title" content="IEEE/CVF Winter Conference on Applications of Computer Vision (WACV 2024)">
+  <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2309.15842.pdf">
+
+  <!-- Additional SEO -->
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com">
+  <link rel="preconnect" href="https://documentcloud.adobe.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
   <title>Exploiting the Signal-Leak Bias in Diffusion Models</title>
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
+  <!-- Favicon and App Icons -->
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="apple-touch-icon" href="static/images/favicon.ico">
+
+  <!-- Critical CSS - Load synchronously -->
   <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <!-- Non-critical CSS - Load asynchronously -->
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+  <!-- Fallback for browsers that don't support preload -->
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+
+  <!-- Fonts - Optimized loading -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Defer non-critical JavaScript -->
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script src="static/js/bulma-carousel.min.js"></script>
-  <script src="static/js/bulma-slider.min.js"></script>
-  <script src="static/js/index.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+
+  <!-- Structured Data for Academic Papers -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "Exploiting the Signal-Leak Bias in Diffusion Models",
+    "description": "Examines and leverages the signal-leak bias in diffusion models for improved image generation.",
+    "author": [
+      {
+        "@type": "Person",
+        "name": "Martin Nicolas Everaert",
+        "affiliation": { "@type": "Organization", "name": "EPFL" }
+      },
+      {
+        "@type": "Person",
+        "name": "Athanasios Fitsios",
+        "affiliation": { "@type": "Organization", "name": "EPFL" }
+      },
+      {
+        "@type": "Person",
+        "name": "Marco Bocchio",
+        "affiliation": { "@type": "Organization", "name": "Largo.ai" }
+      },
+      {
+        "@type": "Person",
+        "name": "Sami Arpa",
+        "affiliation": { "@type": "Organization", "name": "Largo.ai" }
+      },
+      {
+        "@type": "Person",
+        "name": "Sabine Süsstrunk",
+        "affiliation": { "@type": "Organization", "name": "EPFL" }
+      },
+      {
+        "@type": "Person",
+        "name": "Radhakrishna Achanta",
+        "affiliation": { "@type": "Organization", "name": "EPFL" }
+      }
+    ],
+    "datePublished": "2024-01-04",
+    "publisher": { "@type": "Organization", "name": "IEEE/CVF" },
+    "url": "https://ivrl.github.io/signal-leak-bias/",
+    "image": "https://ivrl.github.io/signal-leak-bias/static/images/banner.jpg",
+    "keywords": ["diffusion models", "signal leakage", "color", "brightness", "style adaptation", "machine learning", "computer vision"],
+    "abstract": "There is a bias in the inference pipeline of most diffusion models. This bias arises from a signal leak whose distribution deviates from the noise distribution, creating a discrepancy between training and inference processes. We demonstrate that this signal-leak bias is particularly significant when models are tuned to a specific style, causing sub-optimal style matching. Recent research tries to avoid the signal leakage during training. We instead show how we can exploit this signal-leak bias in existing diffusion models to allow more control over the generated images. This enables us to generate images with more varied brightness, and images that better match a desired style or color. By modeling the distribution of the signal leak in the spatial frequency and pixel domains, and including a signal leak in the initial latent, we generate images that better match expected results without any additional training.",
+    "isAccessibleForFree": true
+  }
+  </script>
+
+  <!-- Website/Organization Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "IVRL - EPFL",
+    "url": "https://www.epfl.ch/labs/ivrl/"
+  }
+  </script>
 
   <meta name="google-site-verification" content="ohByZQJx9EYQ7Po92WxVz1fvVDkQqgI6U5wQZ_7mKBY" />
 </head>
@@ -49,7 +169,96 @@
 <body>
 
 
-  <section class="hero">
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- More Works Dropdown -->
+  <div class="more-works-container">
+    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works">
+      <i class="fas fa-flask"></i>
+      More Works
+      <i class="fas fa-chevron-down dropdown-arrow"></i>
+    </button>
+    <div class="more-works-dropdown" id="moreWorksDropdown">
+      <div class="dropdown-header">
+        <h4>More Works</h4>
+        <button class="close-btn" onclick="toggleMoreWorks()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="works-list">
+        <a href="https://martin-ev.github.io/vgoq" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>Visual Grounding for Object Questions</h5>
+            <p>Introduces Visual Grounding for Object Questions (VGOQ), a new task for grounding visual evidence or context that supports answering general questions about objects, beyond directly visible elements.</p>
+            <span class="work-venue">To appear in CVPR 2026</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+        <a href="https://ivrl.github.io/covariance-mismatch/" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>Covariance Mismatch in Diffusion Models</h5>
+            <p>Investigates the covariance mismatch between noise and data in diffusion models and its impact on image generation.</p>
+            <span class="work-venue">Preprint 2024</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+        <a href="https://ivrl.github.io/signal-leak-bias/" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>Exploiting the Signal-Leak Bias in Diffusion Models</h5>
+            <p>Examines and leverages the signal-leak bias in diffusion models for improved image generation.</p>
+            <span class="work-venue">WACV 2024</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+        <a href="https://ivrl.github.io/diffusion-in-style/" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>Diffusion in Style</h5>
+            <p>Customizes Stable Diffusion's output style by adapting the initial noise distribution, making style adaptation more sample-efficient and faster.</p>
+            <span class="work-venue">ICCV 2023</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+        <a href="https://ivrl.github.io/vetim/" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>VETIM: Expanding the Vocabulary of Text-to-Image Models only with Text</h5>
+            <p>Expands text-to-image models' vocabulary by learning new token embeddings from textual descriptions alone, without requiring sample images.</p>
+            <span class="work-venue">BMVC 2023</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+        <a href="https://ivrl.github.io/ComicsDepth/" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>Estimating Image Depth in the Comics Domain</h5>
+            <p>Estimates depth in comic book images by converting them to natural images and filtering out text to improve accuracy.</p>
+            <span class="work-venue">WACV 2022</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+        <a href="https://arxiv.org/abs/2006.02333" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>Scene Relighting with Illumination Estimation in the Latent Space</h5>
+            <p>Transfers lighting conditions between images by estimating and manipulating illumination in the latent space of an encoder-decoder network.</p>
+            <span class="work-venue">arXiv 2020</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+        <a href="https://www.epfl.ch/labs/ivrl" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>More works from Image and Visual Representation Lab (IVRL)</h5>
+            <p>Also check more works from our labmates at the Image and Visual Representation Lab (IVRL) at EPFL.</p>
+            <span class="work-venue">IVRL - EPFL</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <main id="main-content">
+    <section class="hero">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
@@ -172,12 +381,12 @@
     </div>
   </section>
 
-  <!-- Paper abstract -->
-  <section class="section hero is-light">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Abstract</h2>
+    <!-- Paper abstract -->
+    <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
               There is a bias in the inference pipeline of most diffusion models. This bias arises from a signal leak
@@ -219,26 +428,27 @@
   </section>
   <!-- End youtube video -->
 
-  <section class="hero is-small">
+  <section class="hero is-small is-light">
     <div class="hero-body">
-      <div class="container">
-        <div class="columns is-centered has-text-centered">
-          <h2 class="title is-3">🔎 Research Highlights</h2>
-        </div>
-
-        <div class="content has-text-justified">
-          <ul>
-            <li>In the training of most diffusion models, data are never completely noised, creating a signal
-              leakage and leading to discrepancies between training and inference processes.</li>
-            <li>As a consequence of this signal leakage, the low-frequency / large-scale content of the generated
-              images is mostly unchanged from the initial latents we start the generation process from, generating
-              greyish images or images that do not match the desired style.</li>
-            <li>Our research proposed to exploit this signal-leak bias at inference time to gain more control over
-              generated images.</li>
-            <li>We model the distribution of the signal leak present during training, to include a signal leak at
-              inference time in the initial latents.</li>
-            <li>✨✨ No training required! ✨✨</li>
-          </ul>
+      <div class="container is-max-desktop content">
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3 has-text-centered">🔎 Research Highlights</h2>
+            <div class="content has-text-justified">
+              <ul>
+                <li>In the training of most diffusion models, data are never completely noised, creating a signal
+                  leakage and leading to discrepancies between training and inference processes.</li>
+                <li>As a consequence of this signal leakage, the low-frequency / large-scale content of the generated
+                  images is mostly unchanged from the initial latents we start the generation process from, generating
+                  greyish images or images that do not match the desired style.</li>
+                <li>Our research proposed to exploit this signal-leak bias at inference time to gain more control over
+                  generated images.</li>
+                <li>We model the distribution of the signal leak present during training, to include a signal leak at
+                  inference time in the initial latents.</li>
+                <li>✨✨ No training required! ✨✨</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -247,15 +457,15 @@
 
   <section class="hero is-small">
     <div class="hero-body">
-      <div class="container">
-        <div class="columns is-centered has-text-centered">
-          <h2 class="title is-3">Improving style-tuned models</h2>
-        </div>
-        <div class="content has-text-justified">
-          <p>Models tuned on specific styles often produce results that do not match the styles well. We argue that this is because of a discrepancy between training (contains a
-            signal leak whose distribution differs from unit/standard multivariate Gaussian) and inference (no signal
-            leak). We fix this discrepancy by modelling the signal leak present during training and including a signal
-            leak  at inference time too.</p>
+      <div class="container is-max-desktop content">
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3 has-text-centered">Improving style-tuned models</h2>
+            <div class="content has-text-justified">
+              <p>Models tuned on specific styles often produce results that do not match the styles well. We argue that this is because of a discrepancy between training (contains a
+                signal leak whose distribution differs from unit/standard multivariate Gaussian) and inference (no signal
+                leak). We fix this discrepancy by modelling the signal leak present during training and including a signal
+                leak  at inference time too.</p>
 
           <p><strong>Model:</strong> <a
               href="https://huggingface.co/sd-dreambooth-library/nasa-space-v2-768">sd-dreambooth-library/nasa-space-v2-768</a>,
@@ -351,23 +561,25 @@
               </tr>
             </tbody>
           </table>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="hero is-small">
+  <section class="hero is-small is-light">
     <div class="hero-body">
-      <div class="container">
-        <div class="columns is-centered has-text-centered">
-          <h2 class="title is-3">Training-free style adaptation of Stable Diffusion</h2>
-        </div>
-        <div class="content has-text-justified">
-          <p>The same approach as the previous example can be used directly in the base diffusion model, instead of the
-            model finetuned on a style. That is, we include a signal leak at inference time to bias the image generation
-            towards the desired style.</p>
-          <p>Without our approach, the prompt alone is not sufficient enough to generate picture of the desired style. 
-            Complementing it with a signal leak of the style generates images that better match the desired output.</p>
+      <div class="container is-max-desktop content">
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3 has-text-centered">Training-free style adaptation of Stable Diffusion</h2>
+            <div class="content has-text-justified">
+              <p>The same approach as the previous example can be used directly in the base diffusion model, instead of the
+                model finetuned on a style. That is, we include a signal leak at inference time to bias the image generation
+                towards the desired style.</p>
+              <p>Without our approach, the prompt alone is not sufficient enough to generate picture of the desired style.
+                Complementing it with a signal leak of the style generates images that better match the desired output.</p>
 
           <p><strong>Model:</strong> <a
               href="https://huggingface.co/stabilityai/stable-diffusion-2-1">stabilityai/stable-diffusion-2-1</a>, with
@@ -462,6 +674,8 @@
               </tr>
             </tbody>
           </table>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -469,15 +683,15 @@
 
   <section class="hero is-small">
     <div class="hero-body">
-      <div class="container">
-        <div class="columns is-centered has-text-centered">
-          <h2 class="title is-3">More diverse generated images</h2>
-        </div>
-        <div class="content has-text-justified">
-          <p>For <em>natural</em> images, the disrepency between training and inference distributiosn mostly lies in
-            the frequency components: noised images during training still retain the low-frequency contents (large-scale
-            patterns, main colors) of the original images, while the initial latents during inference always have medium
-            low-frequency contents (e.g. <em>greyish</em> average color). Our approach generates less greyish images.</p>
+      <div class="container is-max-desktop content">
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3 has-text-centered">More diverse generated images</h2>
+            <div class="content has-text-justified">
+              <p>For <em>natural</em> images, the disrepency between training and inference distributiosn mostly lies in
+                the frequency components: noised images during training still retain the low-frequency contents (large-scale
+                patterns, main colors) of the original images, while the initial latents during inference always have medium
+                low-frequency contents (e.g. <em>greyish</em> average color). Our approach generates less greyish images.</p>
 
           <p><strong>Model:</strong> <a
               href="https://huggingface.co/stabilityai/stable-diffusion-2-1">stabilityai/stable-diffusion-2-1</a></p>
@@ -524,20 +738,22 @@
               </tr>
             </tbody>
           </table>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="hero is-small">
+  <section class="hero is-small is-light">
     <div class="hero-body">
-      <div class="container">
-        <div class="columns is-centered has-text-centered">
-          <h2 class="title is-3">Control on the average color</h2>
-        </div>
-        <div class="content has-text-justified">
-          <p>It is also possible to <em>manually</em> set the low-frequency components 
-            of the signal leak, providing control on the low-frequency content of the generated image. </p>
+      <div class="container is-max-desktop content">
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3 has-text-centered">Control on the average color</h2>
+            <div class="content has-text-justified">
+              <p>It is also possible to <em>manually</em> set the low-frequency components
+                of the signal leak, providing control on the low-frequency content of the generated image. </p>
 
           <p><strong>Model:</strong> <a
               href="https://huggingface.co/stabilityai/stable-diffusion-2-1">stabilityai/stable-diffusion-2-1</a></p>
@@ -588,65 +804,89 @@
               </tr>
             </tbody>
           </table>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Poster -->
-  <section class="hero is-small">
-    <div class="hero-body">
-      <div class="container">
-        <div class="columns is-centered has-text-centered">
-          <h2 class="title is-3">Poster</h2>
+  <!--Poster -->
+    <section class="hero is-small">
+      <div class="hero-body">
+        <div class="container">
+          <h2 class="title is-3 has-text-centered">Poster</h2>
+          <div class="columns is-centered">
+            <div class="column is-four-fifths">
+              <div class="poster-container" style="position: relative; width: fit-content; max-width: 100%; margin: 0 auto;">
+                <a href="static/wacv24-51.pdf" target="_blank" class="download-poster-btn" style="position: absolute; top: 0.5rem; right: 0.5rem; text-decoration: none; opacity: 0; transition: opacity 0.3s ease; z-index: 1;" title="Download Poster as PDF">
+                  <i class="fas fa-download"></i>
+                  <span class="copy-text">PDF</span>
+                </a>
+                <a href="static/wacv24-51.pdf" target="_blank">
+                  <img src="static/images/poster.png" alt="Exploiting the Signal-Leak Bias in Diffusion Models - WACV 2024 Poster" style="max-height: 900px; width: auto; max-width: 100%; display: block; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.08);">
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
-        <iframe src="static/wacv24-51.pdf" width="100%" height="600" frameborder="0">
-        </iframe>
+      </div>
+    </section>
+    <!--End Poster -->
+
+  <section class="hero is-small is-light">
+    <div class="hero-body">
+      <div class="container is-max-desktop content">
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3 has-text-centered">License</h2>
+            <div class="content has-text-justified">
+              <p>The <a href="https://ivrl.github.io/signal-leak-bias/">implementation</a> is provided solely as part of the research publication &quot;<a
+                  href="https://ivrl.github.io/signal-leak-bias/">Exploiting the Signal-Leak Bias in Diffusion
+                  Models</a>&quot;, only for academic non-commercial usage. Details can be found in the <a
+                  href="https://github.com/ivrl/signal-leak-bias/blob/main/LICENSE">LICENSE file</a>. If the License is not
+                suitable for your business or project, please contact Largo.ai (info@largo.ai) and EPFL-TTO
+                (info.tto@epfl.ch) for a full commercial license.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
-  <!-- End Poster -->
 
-  <section class="hero is-small">
-    <div class="hero-body">
-      <div class="container">
-        <div class="columns is-centered has-text-centered">
-          <h2 class="title is-3">License</h2>
-        </div>
-        <div class="content has-text-justified">
-          <p>The <a href="https://ivrl.github.io/signal-leak-bias/">implementation</a> is provided solely as part of the research publication &quot;<a
-              href="https://ivrl.github.io/signal-leak-bias/">Exploiting the Signal-Leak Bias in Diffusion
-              Models</a>&quot;, only for academic non-commercial usage. Details can be found in the <a
-              href="https://github.com/ivrl/signal-leak-bias/blob/main/LICENSE">LICENSE file</a>. If the License is not
-            suitable for your business or project, please contact Largo.ai (info@largo.ai) and EPFL-TTO
-            (info.tto@epfl.ch) for a full commercial license.</p>
-
-        </div>
-      </div>
-  </section>
-
-  <!--BibTex citation -->
-  <section class="section" id="BibTeX">
-    <div class="container content">
-      <div class="columns is-centered has-text-centered">
-        <h2 class="title is-3">Citation</h2>
-      </div>
-      <div class="container is-max-desktop">
-        <pre><code>
-@InProceedings{Everaert_2024_WACV,
-    author   = {Everaert, Martin Nicolas and Fitsios, Athanasios and Bocchio, Marco and Arpa, Sami and Süsstrunk, Sabine and Achanta, Radhakrishna},
-    title    = {{E}xploiting the {S}ignal-{L}eak {B}ias in {D}iffusion {M}odels}, 
-    booktitle = {Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
-    month     = {January},
-    year      = {2024},
-    pages     = {4025-4034}
+    <!--BibTex citation -->
+    <section class="hero is-small" id="BibTeX">
+      <div class="hero-body">
+        <div class="container is-max-desktop content">
+          <div class="columns is-centered">
+            <div class="column is-four-fifths">
+              <h2 class="title is-3 has-text-centered">Citation</h2>
+              <div class="content has-text-justified">
+                <p>Please use the following BibTeX entry to cite our paper:</p>
+              </div>
+            </div>
+          </div>
+          <div style="position: relative;">
+            <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard" style="position: absolute; top: 0; right: 0; z-index: 1;">
+              <i class="fas fa-copy"></i>
+              <span class="copy-text">Copy</span>
+            </button>
+            <pre id="bibtex-code"><code>@InProceedings{Everaert_2024_WACV,
+  title     = {{E}xploiting the {S}ignal-{L}eak {B}ias in {D}iffusion {M}odels},
+  author    = {Everaert, Martin Nicolas and Fitsios, Athanasios and Bocchio, Marco and Arpa, Sami and S\"usstrunk, Sabine and Achanta, Radhakrishna},
+  booktitle = {Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
+  month     = {January},
+  year      = {2024},
+  pages     = {4025-4034}
 }</code></pre>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
-  <!--End BibTex citation -->
+    </section>
+    <!--End BibTex citation -->
 
 
+  </main>
   <footer class="footer">
     <div class="container">
       <div class="columns is-centered">
@@ -654,7 +894,8 @@
           <div class="content">
             <p>
               This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
-                target="_blank">Academic Project Page Template</a>.
+                target="_blank">Academic Project Page Template</a> which was adopted from the <a
+                href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
             </p>
           </div>
         </div>
@@ -663,5 +904,4 @@
   </footer>
 
 </body>
-
 </html>
